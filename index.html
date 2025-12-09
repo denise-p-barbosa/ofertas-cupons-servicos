@@ -250,6 +250,149 @@
 
         </div>
     </section>
+
+    <section class="amazon-carousel-section">
+        <div class="section-title">
+            <hr> <span>TESTE GRÁTIS E BENEFÍCIOS EXCLUSIVOS</span> <hr>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev-btn" id="amazonPrevBtn">&#10094;</button>
+            
+            <div class="carousel-track-container">
+                <ul class="carousel-track" id="amazonCarouselTrack">
+                    
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">📦</span>
+                            <h3>Amazon Prime</h3>
+                        </div>
+                        <p>Frete GRÁTIS, Filmes, Séries, Músicas e muito mais em um só pacote.</p>
+                        <a href="SEU_LINK_PRIME_AQUI" class="amazon-cta" target="_blank">TESTE 30 DIAS GRÁTIS</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">🎬</span>
+                            <h3>Prime Video</h3>
+                        </div>
+                        <p>Assista a séries originais premiadas e filmes de sucesso.</p>
+                        <a href="SEU_LINK_VIDEO_AQUI" class="amazon-cta" target="_blank">ASSISTA AGORA</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">📺</span>
+                            <h3>Prime Video Channels</h3>
+                        </div>
+                        <p>Teste canais premium (Paramount+, Max, etc) sem fidelidade.</p>
+                        <a href="SEU_LINK_CHANNELS_FREE_AQUI" class="amazon-cta" target="_blank">TESTE GRÁTIS</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">💳</span>
+                            <h3>Channels Assinatura</h3>
+                        </div>
+                        <p>Adicione seus canais favoritos ao seu plano Prime Video.</p>
+                        <a href="SEU_LINK_CHANNELS_PAID_AQUI" class="amazon-cta" target="_blank">ASSINAR CANAIS</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">📚</span>
+                            <h3>Kindle Unlimited</h3>
+                        </div>
+                        <p>Acesso a mais de 1 milhão de eBooks para ler onde quiser.</p>
+                        <a href="SEU_LINK_KINDLE_AQUI" class="amazon-cta" target="_blank">30 DIAS GRÁTIS</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">🔥</span>
+                            <h3>Kindle Promoções</h3>
+                        </div>
+                        <p>Ofertas especiais para novos assinantes Kindle Unlimited.</p>
+                        <a href="SEU_LINK_KINDLE_PROMO_AQUI" class="amazon-cta" target="_blank">VER PROMOÇÃO</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">🎧</span>
+                            <h3>Music Unlimited</h3>
+                        </div>
+                        <p>100 milhões de músicas em HD e Podcasts sem anúncios.</p>
+                        <a href="SEU_LINK_MUSIC_AQUI" class="amazon-cta" target="_blank">TESTE GRÁTIS</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">🎵</span>
+                            <h3>Music Ofertas</h3>
+                        </div>
+                        <p>Planos especiais e descontos na assinatura de música.</p>
+                        <a href="SEU_LINK_MUSIC_PROMO_AQUI" class="amazon-cta" target="_blank">VER OFERTAS</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">👶</span>
+                            <h3>Lista do Bebê</h3>
+                        </div>
+                        <p>Crie a lista perfeita para o enxoval e ganhe descontos.</p>
+                        <a href="SEU_LINK_BEBE_CADASTRO_AQUI" class="amazon-cta" target="_blank">CRIAR LISTA</a>
+                    </li>
+
+                    <li class="amazon-service-card">
+                        <div class="amz-header">
+                            <span class="amz-icon">🎁</span>
+                            <h3>Bebê - 1ª Compra</h3>
+                        </div>
+                        <p>Benefícios exclusivos para quem compra a lista de enxoval.</p>
+                        <a href="SEU_LINK_BEBE_COMPRA_AQUI" class="amazon-cta" target="_blank">COMPRAR AGORA</a>
+                    </li>
+
+                </ul>
+            </div>
+            
+            <button class="carousel-btn next-btn" id="amazonNextBtn">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        // --- 1. LÓGICA DO PRIMEIRO CARROSSEL (PRODUTOS) ---
+        const track1 = document.getElementById('carouselTrack');
+        const nextBtn1 = document.getElementById('nextBtn');
+        const prevBtn1 = document.getElementById('prevBtn');
+        
+        // Se os botões existirem na tela, ativa o clique
+        if (track1 && nextBtn1 && prevBtn1) {
+            nextBtn1.addEventListener('click', () => {
+                track1.scrollBy({ left: 240, behavior: 'smooth' });
+            });
+            prevBtn1.addEventListener('click', () => {
+                track1.scrollBy({ left: -240, behavior: 'smooth' });
+            });
+        }
+
+        // --- 2. LÓGICA DO SEGUNDO CARROSSEL (AMAZON) ---
+        const track2 = document.getElementById('amazonCarouselTrack');
+        const nextBtn2 = document.getElementById('amazonNextBtn');
+        const prevBtn2 = document.getElementById('amazonPrevBtn');
+
+        // Se os botões da Amazon existirem na tela, ativa o clique
+        if (track2 && nextBtn2 && prevBtn2) {
+            nextBtn2.addEventListener('click', () => {
+                track2.scrollBy({ left: 280, behavior: 'smooth' });
+            });
+            prevBtn2.addEventListener('click', () => {
+                track2.scrollBy({ left: -280, behavior: 'smooth' });
+            });
+        }
+    </script>
+
+
+
     <footer>
         <div class="footer-content">
             <p>Denise & Pereira - Afiliado Autorizado Mercado Livre</p>

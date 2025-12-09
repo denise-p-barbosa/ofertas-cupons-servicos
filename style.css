@@ -544,3 +544,81 @@ footer { background-color: #222; color: white; text-align: center; padding: 40px
         margin: 0 auto;  /* Centraliza */
     }
 }
+
+/* --- ESTILOS DO CARROSSEL AMAZON --- */
+
+.amazon-carousel-section {
+    padding: 40px 10%;
+    background-color: #e3e6e6; /* Cinza clarinho padrão Amazon */
+}
+
+/* Estilo dos Cards de Serviço */
+.amazon-service-card {
+    min-width: 260px;  /* Tamanho fixo do cartão */
+    height: 300px;     /* Altura fixa */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 6px solid #232F3E; /* Topo Azul Amazon */
+    transition: transform 0.2s;
+    list-style: none; /* Remove bolinhas de lista */
+}
+
+.amazon-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.amz-header {
+    text-align: center;
+}
+
+.amz-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.amazon-service-card h3 {
+    font-size: 1.1rem;
+    color: #232F3E; /* Azul Escuro */
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.amazon-service-card p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Botão Laranja CTA */
+.amazon-cta {
+    background-color: #FF9900;
+    color: #232F3E;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    display: block;
+}
+
+.amazon-cta:hover {
+    background-color: #e88b00;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .amazon-carousel-section { padding: 30px 5%; }
+    .amazon-service-card { min-width: 240px; }
+}
