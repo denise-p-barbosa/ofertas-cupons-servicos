@@ -553,24 +553,27 @@ footer { background-color: #222; color: white; text-align: center; padding: 40px
 }
 
 /* Estilo dos Cards de Serviço */
+/* Estilo dos Cards de Serviço (Versão DARK PRIME) */
 .amazon-service-card {
-    min-width: 260px;  /* Tamanho fixo do cartão */
-    height: 300px;     /* Altura fixa */
-    background: white;
+    min-width: 260px;
+    height: 300px;
+    background-color: #232F3E; /* Fundo Azul Escuro Oficial Amazon */
+    color: white;              /* Texto base Branco */
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra um pouco mais forte */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    border-top: 6px solid #232F3E; /* Topo Azul Amazon */
+    border-top: 5px solid #FF9900; /* Borda Laranja no topo para contraste */
     transition: transform 0.2s;
-    list-style: none; /* Remove bolinhas de lista */
+    list-style: none;
 }
 
 .amazon-service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border-top-color: white; /* Efeito extra: borda fica branca ao passar o mouse */
 }
 
 .amz-header {
@@ -581,28 +584,32 @@ footer { background-color: #222; color: white; text-align: center; padding: 40px
     font-size: 2.5rem;
     display: block;
     margin-bottom: 10px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra no ícone para destacar */
 }
 
+/* Título Branco */
 .amazon-service-card h3 {
     font-size: 1.1rem;
-    color: #232F3E; /* Azul Escuro */
+    color: #ffffff; /* Branco Puro */
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
+/* Descrição em Cinza Claro (para não cansar a vista) */
 .amazon-service-card p {
     font-size: 0.9rem;
-    color: #555;
+    color: #e0e0e0; /* Um branco levemente acinzentado */
     text-align: center;
     line-height: 1.4;
     margin-bottom: 15px;
 }
 
-/* Botão Laranja CTA */
+/* Botão Laranja CTA (Mantive laranja pois é a cor de ação da Amazon) */
 .amazon-cta {
     background-color: #FF9900;
-    color: #232F3E;
+    color: #232F3E; /* Texto do botão escuro para leitura */
     text-decoration: none;
     text-align: center;
     padding: 12px;
@@ -614,7 +621,18 @@ footer { background-color: #222; color: white; text-align: center; padding: 40px
 }
 
 .amazon-cta:hover {
-    background-color: #e88b00;
+    background-color: #ffffff; /* Botão fica branco no hover */
+    color: #232F3E;
+}
+
+/* --- ESTILO DO AVISO "NOVOS ASSINANTES" --- */
+.amz-disclaimer {
+    display: block;        /* Garante que fique em uma linha separada */
+    font-size: 0.7rem;     /* Letra bem pequena */
+    color: #b3b3b3;        /* Cinza claro para ler no fundo escuro */
+    text-align: center;
+    margin-top: 8px;       /* Um espacinho do botão */
+    font-style: italic;    /* Itálico para dar cara de "aviso" */
 }
 
 /* Ajuste Mobile */
