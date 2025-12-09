@@ -635,6 +635,154 @@ footer { background-color: #222; color: white; text-align: center; padding: 40px
     font-style: italic;    /* Itálico para dar cara de "aviso" */
 }
 
+/* --- ESTILOS DO DESTAQUE PRIME VIDEO --- */
+
+.prime-highlight-section {
+    margin-bottom: 40px; /* Espaço antes do rodapé */
+}
+
+/* 1. Faixa do Topo (Azul Cyan Prime) */
+.prime-header-bar {
+    background-color: #00A8E1; /* Azul Prime Video */
+    color: #0F171E;            /* Texto Escuro (Preto Amazon) */
+    text-align: center;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.prime-header-bar span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.prime-header-bar h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 2. Container Dividido (Texto | Foto) */
+.prime-content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza na tela */
+    background-color: white;
+    min-height: 500px; /* Altura mínima para ficar imponente */
+}
+
+/* Lado Esquerdo (Texto) */
+.prime-text-side {
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.prime-icon img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.prime-text-side h3 {
+    font-size: 1.8rem;
+    color: #0F171E;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.prime-text-side p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Lista de Vantagens (Checklist) */
+.prime-features-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+.prime-features-list li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Botão Azul Escuro */
+.prime-cta-btn {
+    background-color: #0F171E; /* Preto/Azul Amazon */
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    align-self: flex-start; /* Botão não estica */
+    transition: 0.3s;
+}
+
+.prime-cta-btn:hover {
+    background-color: #00A8E1; /* Vira Azul Claro no hover */
+    color: #0F171E;
+}
+
+.legal-text {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Lado Direito (Imagem com Fundo) */
+.prime-image-side {
+    width: 50%;
+    background-color: #f2f4f8; /* Um cinza azulado bem suave de fundo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.prime-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* A imagem preenche tudo */
+    transition: transform 0.5s;
+}
+
+.prime-image-side:hover img {
+    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+}
+
+/* RESPONSIVO (Celular) */
+@media (max-width: 768px) {
+    .prime-content-wrapper {
+        flex-direction: column-reverse; /* Imagem em cima, texto em baixo */
+    }
+    .prime-text-side, .prime-image-side {
+        width: 100%;
+    }
+    .prime-image-side {
+        height: 300px; /* Altura da foto no celular */
+    }
+    .prime-text-side {
+        padding: 40px 20px;
+        text-align: center;
+        align-items: center;
+    }
+    .prime-cta-btn { width: 100%; }
+    .prime-header-bar h2 { font-size: 1.5rem; }
+}
+
+
 /* Ajuste Mobile */
 @media (max-width: 768px) {
     .amazon-carousel-section { padding: 30px 5%; }
