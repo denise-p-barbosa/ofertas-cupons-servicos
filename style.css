@@ -1,0 +1,546 @@
+/* Reset Básico */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+
+
+
+/* Garante que o link não estrague o visual do card */
+.card-link {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit;        /* Mantém as cores originais dos textos */
+    display: block;        /* Faz o link ocupar o bloco todo */
+    height: 100%;          /* Garante a altura total */
+}
+
+/* VARIÁVEIS DE CORES */
+:root {
+    --ml-blue: #2D3277;
+    --ml-yellow: #FFE600;
+    --ml-green: #00a650; /* Verde do Mercado Livre para preços */
+    --white: #ffffff;
+    --gray-bg: #ebebeb;   
+    --text-dark: #333333;
+}
+
+body { background-color: var(--gray-bg); color: var(--text-dark); }
+
+/* 1. Header */
+header {
+    background-color: var(--ml-blue);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.5rem; 
+    letter-spacing: 1px; 
+    border: 1px solid var(--ml-yellow);
+    color: var(--ml-yellow);
+    padding: 5px 10px; 
+}
+nav a { color: var(--white); text-decoration: none; margin-left: 20px; font-size: 0.9rem; text-transform: uppercase; font-weight: bold; }
+nav a:hover { color: var(--ml-yellow); transition: 0.3s; }
+
+/* 2. Hero Section */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1470&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+.hero-content { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 40px; 
+    max-width: 450px; 
+    border-left: 5px solid var(--ml-yellow);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; color: var(--ml-blue); }
+.hero h2 { display: inline-block; font-size: 1rem; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase; color: #555; /* Configuração da Borda */
+    border: 2px solid var(--ml-blue); 
+    padding: 8px 25px;           /* Espaço interno (Cria o ar em volta do texto) */
+    border-radius: 50px;         /* Deixa as pontas redondas (Pílula) */
+    font-weight: bold;
+    background-color: transparent;}
+
+/* AQUI ESTÁ O AFASTAMENTO DO BOTÃO */
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px; /* Aumentei para afastar o botão de baixo */
+}
+.btn-hero {
+    display: inline-block;
+    background-color: var(--ml-blue);
+    color: var(--white);
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.btn-hero:hover { background-color: var(--ml-yellow); color: var(--ml-blue); }
+
+/* 3. Features */
+.features {
+    background-color: var(--ml-yellow);
+    color: var(--ml-blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+}
+.feature-item { display: flex; align-items: center; gap: 15px; max-width: 300px; }
+.feature-item span { font-size: 2rem; }
+.feature-item h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 900; }
+.feature-item p { font-size: 0.8rem; opacity: 0.9; font-weight: 500;}
+
+/* 4. Brands */
+.brands { text-align: center; padding: 40px 20px; background: white; }
+.brands h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; letter-spacing: 2px; color: var(--ml-blue); }
+.brand-logos span { margin: 0 20px; font-weight: bold; color: #ccc; font-size: 1.5rem; }
+
+/* 5. Top Picks (Seção Original) */
+.top-picks { 
+    padding: 50px 10%; 
+    background-color: var(--ml-blue);
+    color: white; 
+}
+.section-title { text-align: center; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; gap: 20px; }
+.section-title span { font-family: 'Playfair Display', serif; letter-spacing: 2px; font-size: 1.2rem; text-transform: uppercase; color: var(--ml-yellow); }
+.section-title hr { width: 100px; border: 0.5px solid rgba(255,255,255,0.3); }
+
+.picks-container { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+
+/* CARD ORIGINAL */
+.pick-card { 
+    background: white; 
+    color: black; 
+    width: 400px; 
+    display: flex; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    border-radius: 6px;
+    overflow: hidden;
+    height: 250px;
+}
+.img-placeholder { width: 40%; display: flex; align-items: center; justify-content: center; font-weight: bold; text-align: center; background-color: #eee;}
+.pick-info { width: 60%; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
+.pick-info h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: var(--ml-blue); font-weight: bold; }
+.stars { color: var(--ml-yellow); margin-bottom: 10px; font-size: 1.2rem; }
+.pick-info p { font-size: 0.85rem; line-height: 1.4; margin-bottom: 15px; font-style: italic; color: #666; }
+.author { font-size: 0.7rem; font-weight: bold; margin-bottom: 15px; color: #999; text-transform: uppercase; }
+
+.btn-dark {
+    background-color: var(--ml-blue);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.btn-dark:hover { background-color: var(--ml-yellow); color: var(--ml-blue); }
+
+
+/* --- ESTILOS DA NOVA SEÇÃO CARROSSEL --- */
+.carousel-section {
+    padding: 40px 10%;
+    background-color: white; /* Fundo branco para destacar */
+}
+
+.carousel-section h2 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.carousel-wrapper {
+    position: relative; /* Necessário para os botões absolutos */
+    padding: 10px 0;
+}
+
+/* A "pista" onde os produtos correm */
+.carousel-track-container {
+    overflow-x: auto; /* Permite rolar horizontalmente */
+    scroll-behavior: smooth; /* Rolagem suave */
+    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+}
+.carousel-track-container::-webkit-scrollbar { 
+    display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px; /* Espaço entre os produtos */
+    list-style: none;
+    padding-bottom: 15px; /* Espaço para a sombra não cortar */
+}
+
+/* O Card do Produto Individual */
+.product-card {
+    min-width: 220px; /* Largura fixa do card */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.product-card:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 10px;
+    /* Corta o texto com "..." se for muito longo */
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Preços */
+.price .old-price {
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: line-through;
+    display: block;
+}
+.price .new-price {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: bold;
+}
+.price .discount {
+    font-size: 0.9rem;
+    color: var(--ml-green); /* Verde ML */
+    margin-left: 8px;
+}
+
+/* Frete */
+.shipping {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--ml-green);
+    font-weight: bold;
+}
+.shipping .full-icon {
+    font-style: italic;
+    margin-left: 5px;
+}
+
+/* Botões de Navegação (Setas) */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--ml-blue);
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+.carousel-btn:hover {
+    background-color: var(--ml-blue);
+    color: var(--ml-yellow);
+    border-color: var(--ml-blue);
+}
+.prev-btn { left: -25px; }
+.next-btn { right: -25px; }
+
+
+/* 6. Footer */
+footer { background-color: #222; color: white; text-align: center; padding: 40px; margin-top: auto; border-top: 5px solid var(--ml-yellow); }
+.socials { margin: 15px 0; }
+.socials a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
+.copyright { font-size: 0.7rem; opacity: 0.5; }
+
+/* Responsivo para Celular */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; text-align: center; }
+    .hero { justify-content: center; padding: 0; background-position: center; }
+    .hero-content { text-align: center; margin: 20px; width: 90%; }
+    
+    .pick-card { flex-direction: column; width: 100%; height: auto; }
+    .img-placeholder { width: 100%; height: 200px; }
+    .pick-info { width: 100%; }
+
+    /* Ajustes do Carrossel no Celular */
+    .carousel-section { padding: 30px 5%; }
+    .carousel-btn { display: none; /* Esconde as setas no celular (usa o dedo) */ }
+    .carousel-track { gap: 15px; }
+    .product-card { min-width: 180px; } /* Cards menores no celular */
+}
+
+/* Adicione no final do style.css */
+
+.card-img-side {
+    width: 40%;        /* Ocupa exatamente a largura que era do quadrado cinza */
+    height: 100%;      /* Ocupa toda a altura do card */
+    object-fit: cover; /* CORTA a imagem para caber no espaço sem distorcer */
+    display: block;    /* Remove espaços fantasmas */
+}
+
+/* Garantia para o card não esticar */
+.pick-card {
+    height: 250px;     /* Mantém a altura fixa igual estava antes */
+    display: flex;     /* Garante que fiquem lado a lado */
+    overflow: hidden;  /* Corta qualquer coisa que tente sair da caixa */
+}
+/* --- ESTILOS DO BANNER PROMOCIONAL FIXO --- */
+
+.promo-section {
+    padding: 40px 10%;
+    background-color: white; /* Fundo branco da página */
+    display: flex;
+    justify-content: center;
+}
+
+.promo-container {
+    display: flex; /* Coloca imagem e texto lado a lado */
+    width: 100%;
+    max-width: 1100px;
+    background-color: var(--ml-blue); /* Fundo Azul Escuro do Banner */
+    border-radius: 12px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que a imagem não saia das bordas */
+    box-shadow: 0 10px 25px rgba(45, 50, 119, 0.3); /* Sombra elegante azulada */
+}
+
+/* Configuração da Imagem (50% da largura) */
+.promo-image {
+    width: 50%;
+    position: relative;
+}
+
+.promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre todo o espaço sem distorcer */
+    display: block;
+}
+
+/* Configuração do Texto (50% da largura) */
+.promo-text {
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    color: white; /* Texto Branco */
+}
+
+.promo-tag {
+    background-color: rgba(255,255,255,0.1); /* Fundo transparente */
+    color: var(--ml-yellow); /* Texto Amarelo */
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    align-self: flex-start; /* Fica no canto esquerdo */
+    margin-bottom: 15px;
+    border: 1px solid var(--ml-yellow);
+}
+
+.promo-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.promo-discount {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--ml-yellow); /* Destaque Amarelo */
+}
+
+.promo-discount span {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.promo-discount strong {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.promo-text p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* Botão do Banner */
+.promo-btn {
+    background-color: var(--ml-yellow); /* Botão Amarelo */
+    color: var(--ml-blue); /* Texto Azul */
+    text-decoration: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    align-self: flex-start; /* O botão não estica a tela toda */
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.promo-btn:hover {
+    background-color: white;
+    color: var(--ml-blue);
+    transform: translateY(-3px); /* Efeito de levantar */
+}
+
+/* RESPONSIVO (Celular) */
+@media (max-width: 768px) {
+    .promo-container {
+        flex-direction: column; /* Imagem em cima, texto em baixo */
+    }
+    .promo-image, .promo-text {
+        width: 100%;
+    }
+    .promo-image {
+        height: 250px; /* Altura da foto no celular */
+    }
+    .promo-text {
+        padding: 30px;
+        text-align: center; /* Centraliza tudo no celular */
+        align-items: center;
+    }
+    .promo-discount { justify-content: center; }
+    .promo-btn { align-self: center; width: 100%; text-align: center; }
+}
+
+/* --- ESTILO ESPECIAL PARA CUPONS --- */
+
+/* Estilização do Código do Cupom (Caixa Pontilhada) */
+.coupon-box {
+    background-color: #f9f9f9;
+    border: 2px dashed var(--ml-blue); /* Borda pontilhada azul */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.coupon-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+    font-weight: bold;
+}
+
+.coupon-code {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--ml-blue);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.promo-desc {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+/* --- CORREÇÃO DO MOBILE (Obrigatório) --- */
+@media (max-width: 768px) {
+    
+    /* Força o card a ficar em pé (coluna) no celular */
+    .pick-card {
+        flex-direction: column !important; /* O !important garante que sobrescreve o desktop */
+        height: auto !important; /* Altura automática para caber o texto */
+        width: 100% !important;
+    }
+
+    /* Aumenta a imagem para ocupar a largura toda no topo */
+    .card-img-side {
+        width: 100% !important; 
+        height: 200px !important; /* Altura fixa para a foto */
+    }
+
+    /* O texto ocupa a largura toda embaixo */
+    .pick-info {
+        width: 100% !important;
+        padding: 20px !important;
+    }
+}
+
+/* --- ESTILO EXTRA PARA O BANNER DE TECH (PRETO) --- */
+
+.tech-style {
+    background-color: #111 !important; /* Muda para Preto Premium */
+    flex-direction: row-reverse; /* INVERTE: Texto na Esquerda, Foto na Direita */
+}
+
+/* Ajuste do botão para combinar com fundo preto */
+.tech-style .promo-btn {
+    background-color: white;
+    color: black;
+}
+.tech-style .promo-btn:hover {
+    background-color: var(--ml-blue);
+    color: white;
+}
+
+/* Ajuste Obrigatório para Celular */
+@media (max-width: 768px) {
+    .tech-style {
+        flex-direction: column !important; /* No celular volta ao normal (um em cima do outro) */
+    }
+}
+
+/* --- CORREÇÃO DE TEXTO COLADO NAS BORDAS (CELULAR) --- */
+@media (max-width: 768px) {
+    .promo-text h2 {
+        font-size: 1.8rem;   /* Diminui a letra (antes era 2.5rem) */
+        padding: 0 15px;     /* Adiciona um "colchão" de ar nas laterais */
+        line-height: 1.2;    /* Ajusta a altura da linha */
+        width: 100%;         /* Garante que o texto respeite a caixa */
+        word-wrap: break-word; /* Se mesmo assim for grande, quebra a linha */
+    }
+    
+    /* Ajuste extra para o container não vazar a tela */
+    .promo-container {
+        width: 95%;      /* Deixa um espacinho nas bordas da tela */
+        margin: 0 auto;  /* Centraliza */
+    }
+}
